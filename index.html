@@ -1,0 +1,1059 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lista de Presentes | Nosso Casamento 💍</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8f6;
+            color: #4a3b37;
+        }
+
+        /* ==========================
+           CABEÇALHO
+        ========================== */
+
+        header {
+            background: linear-gradient(135deg, #9b6b6b, #d3a0a0);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 19px;
+        }
+
+        /* ==========================
+           CONTADOR
+        ========================== */
+
+        .contador {
+            background: white;
+            max-width: 900px;
+            width: 90%;
+            margin: -35px auto 45px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            text-align: center;
+        }
+
+        .contador h2 {
+            margin-bottom: 20px;
+            color: #7d5555;
+        }
+
+        #contador {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tempo {
+            background: #8e6262;
+            color: white;
+            padding: 15px;
+            min-width: 90px;
+            border-radius: 12px;
+        }
+
+        .tempo span {
+            display: block;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .tempo small {
+            font-size: 13px;
+        }
+
+        /* ==========================
+           INTRODUÇÃO
+        ========================== */
+
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            padding: 0 20px 40px;
+        }
+
+        .intro h2 {
+            color: #8e6262;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* ==========================
+           LISTA DE PRESENTES
+        ========================== */
+
+        .lista {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .lista h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #8e6262;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 25px;
+        }
+
+        /* ==========================
+           CARD
+        ========================== */
+
+        .presente {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+            transition: 0.3s;
+        }
+
+        .presente:hover {
+            transform: translateY(-6px);
+        }
+
+        .presente img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .conteudo {
+            padding: 20px;
+        }
+
+        .conteudo h3 {
+            color: #805858;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .conteudo p {
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .preco {
+            font-size: 20px;
+            font-weight: bold;
+            color: #65845b;
+            margin-bottom: 15px;
+        }
+
+        /* ==========================
+           BOTÃO
+        ========================== */
+
+        .botao {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #8e6262;
+            color: white;
+            padding: 13px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background: #704848;
+        }
+
+        /* ==========================
+           RODAPÉ
+        ========================== */
+
+        footer {
+            margin-top: 60px;
+            background: #493a36;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            margin: 8px;
+        }
+
+        /* ==========================
+           CELULAR
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            .tempo {
+                min-width: 70px;
+            }
+
+            .tempo span {
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     CABEÇALHO
+========================================== -->
+
+<header>
+
+    <!-- ALTERE OS NOMES DOS NOIVOS -->
+
+    <h1>💍 William & Marcela 💍</h1>
+
+    <p>
+        Nosso grande dia está chegando!
+    </p>
+
+</header>
+
+
+<!-- ==========================================
+     CONTADOR
+========================================== -->
+
+<section class="contador">
+
+    <h2>
+        ⏰ Faltam para o nosso casamento
+    </h2>
+
+    <div id="contador">
+
+        <div class="tempo">
+            <span id="dias">0</span>
+            <small>Dias</small>
+        </div>
+
+        <div class="tempo">
+            <span id="horas">0</span>
+            <small>Horas</small>
+        </div>
+
+        <div class="tempo">
+            <span id="minutos">0</span>
+            <small>Minutos</small>
+        </div>
+
+        <div class="tempo">
+            <span id="segundos">0</span>
+            <small>Segundos</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     INTRODUÇÃO
+========================================== -->
+
+<section class="intro">
+
+    <h2>🎁 Ajude a construir nosso novo lar!</h2>
+
+    <p>
+
+        Estamos começando uma nova história juntos!
+        Escolhemos alguns itens que serão muito importantes
+        para nossa nova casa.
+
+        Escolha um presente, clique no botão e você será
+        direcionado para o link correspondente.
+
+        Muito obrigado por fazer parte desse momento! ❤️
+
+    </p>
+
+</section>
+
+
+<!-- ==========================================
+     LISTA
+========================================== -->
+
+<section class="lista">
+
+    <h2>🎁 Nossa Lista de Presentes</h2>
+
+
+    <div class="grid">
+
+
+        <!-- =====================================
+             SOFÁ
+        ====================================== -->
+
+        <div class="presente">
+
+            <img src="imagens/sofa.jpg" alt="Sofá">
+
+            <div class="conteudo">
+
+                <h3>🛋️ Sofá para o noivo dormir bem</h3>
+
+                <p>
+                    Um sofá confortável para o noivo
+                    descansar depois de um dia cansativo.
+                </p>
+
+                <div class="preco">
+                   
+                </div>
+
+
+                <!--
+                    ALTERE O LINK ABAIXO
+
+                    Exemplo:
+
+                    https://www.exemplo.com/sofa
+                -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DO_SOFA"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             COZINHA
+        ====================================== -->
+
+        <div class="presente">
+
+            <img src="imagens/cozinha.jpg" alt="Cozinha">
+
+            <div class="conteudo">
+
+                <h3>🍳 Cozinha para a noiva cozinhar</h3>
+
+                <p>
+                    Uma cozinha para preparar muitas
+                    comidas gostosas para o casal.
+                </p>
+
+                <div class="preco">
+                
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DA_COZINHA"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             ARMÁRIO DE PANELAS
+        ====================================== -->
+
+        <div class="presente">
+
+            <img src="imagens/armario.jpg" alt="Armário">
+
+            <div class="conteudo">
+
+                <h3>🍲 Armário para guardar as panelas</h3>
+
+                <p>
+                    Para deixar todas as panelas organizadas
+                    na cozinha do casal.
+                </p>
+
+                <div class="preco">
+                 
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DO_ARMARIO"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             GUARDA-ROUPA
+        ====================================== -->
+
+        <div class="presente">
+
+            <img
+                src="imagens/guarda-roupa.jpg"
+                alt="Guarda roupa">
+
+            <div class="conteudo">
+
+                <h3>👗 Guarda-roupa do casal</h3>
+
+                <p>
+                    Para guardar as roupas dos dois
+                    e organizar o novo lar.
+                </p>
+
+                <div class="preco">
+                   
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DO_GUARDA_ROUPA"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             CAMA
+        ====================================== -->
+
+        <div class="presente">
+
+            <img src="imagens/cama.jpg" alt="Cama">
+
+            <div class="conteudo">
+
+                <h3>🛏️ Cama para o casal</h3>
+
+                <p>
+                    Uma cama confortável para começar
+                    a vida de casados.
+                </p>
+
+                <div class="preco">
+                    
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DA_CAMA"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             GELADEIRA
+        ====================================== -->
+
+        <div class="presente">
+
+            <img src="imagens/geladeira.jpg" alt="Geladeira">
+
+            <div class="conteudo">
+
+                <h3>🧊 Geladeira</h3>
+
+                <p>
+                    Para guardar as compras e deixar
+                    tudo sempre bem geladinho.
+                </p>
+
+                <div class="preco">
+                    
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DA_GELADEIRA"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             TELEVISÃO
+        ====================================== -->
+
+        <div class="presente">
+
+            <img src="imagens/tv.jpg" alt="Televisão">
+
+            <div class="conteudo">
+
+                <h3>📺 Televisão</h3>
+
+                <p>
+                    Para nossas noites de filmes,
+                    séries e muita pipoca.
+                </p>
+
+                <div class="preco">
+                    
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DA_TV"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             MESA
+        ====================================== -->
+
+        <div class="presente">
+
+            <img src="imagens/mesa.jpg" alt="Mesa">
+
+            <div class="conteudo">
+
+                <h3>🍽️ Mesa para o casal</h3>
+
+                <p>
+                    Para nossas refeições e muitos
+                    momentos juntos.
+                </p>
+
+                <div class="preco">
+                    
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DA_MESA"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             MICRO-ONDAS
+        ====================================== -->
+
+        <div class="presente">
+
+            <img
+                src="imagens/microondas.jpg"
+                alt="Micro-ondas">
+
+            <div class="conteudo">
+
+                <h3>🍿 Micro-ondas</h3>
+
+                <p>
+                    Para facilitar a rotina do casal
+                    nos dias mais corridos.
+                </p>
+
+                <div class="preco">
+                  
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="https://www.mercadolivre.com.br/micro-ondas-philco-20l-preto-painel-mecanico-pmo23m/p/MLB62627613?pdp_filters=item_id%3AMLB4404913607&from=gshop&matt_tool=16151386&matt_word=&matt_source=google&matt_campaign_id=22090354208&matt_ad_group_id=197094183811&matt_match_type=&matt_network=g&matt_device=c&matt_creative=792355616853&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735098660&matt_product_id=MLB62627613-product&matt_product_partition_id=2455356920375&matt_target_id=aud-2486208819580:pla-2455356920375&cq_src=google_ads&cq_cmp=22090354208&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22090354208&gbraid=0AAAAAD93qcAPmnGCXcM7lQkdq1zte1VZN&gclid=Cj0KCQjwp9vTBhCWARIsANaUrjvRSj40XjdLAiGx4D84jcuKDnLAysgG1iDPv8a1QXA0HIo1FvAIhOsaAlExEALw_wcB"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             MÁQUINA DE LAVAR
+        ====================================== -->
+
+        <div class="presente">
+
+            <img
+                src="imagens/maquina-lavar.jpg"
+                alt="Máquina de lavar">
+
+            <div class="conteudo">
+
+                <h3>🧺 Máquina de lavar</h3>
+
+                <p>
+                    Para ajudar o casal a cuidar
+                    das roupas da nova casa.
+                </p>
+
+                <div class="preco">
+                   
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DA_MAQUINA"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             JOGO DE PANELAS
+        ====================================== -->
+
+        <div class="presente">
+
+            <img
+                src="imagens/panelas.jpg"
+                alt="Jogo de panelas">
+
+            <div class="conteudo">
+
+                <h3>🍳 Jogo de panelas</h3>
+
+                <p>
+                    Para preparar aquele almoço especial
+                    para toda a família.
+                </p>
+
+                <div class="preco">
+                   
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DAS_PANELAS"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             LIQUIDIFICADOR
+        ====================================== -->
+
+        <div class="presente">
+
+            <img
+                src="imagens/liquidificador.jpg"
+                alt="Liquidificador">
+
+            <div class="conteudo">
+
+                <h3>🥤 Liquidificador</h3>
+
+                <p>
+                    Para fazer sucos, vitaminas
+                    e muitas receitas.
+                </p>
+
+                <div class="preco">
+                   
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DO_LIQUIDIFICADOR"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             CAFETEIRA
+        ====================================== -->
+
+        <div class="presente">
+
+            <img
+                src="imagens/cafeteira.jpg"
+                alt="Cafeteira">
+
+            <div class="conteudo">
+
+                <h3>☕ Cafeteira</h3>
+
+                <p>
+                    Para começar as manhãs
+                    com aquele cafezinho.
+                </p>
+
+                <div class="preco">
+                   
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DA_CAFETEIRA"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             JOGO DE CAMA
+        ====================================== -->
+
+        <div class="presente">
+
+            <img
+                src="imagens/jogo-cama.jpg"
+                alt="Jogo de cama">
+
+            <div class="conteudo">
+
+                <h3>🛏️ Jogo de cama</h3>
+
+                <p>
+                    Para deixar nosso quarto
+                    ainda mais confortável.
+                </p>
+
+                <div class="preco">
+                   
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DO_JOGO_DE_CAMA"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             JOGO DE TOALHAS
+        ====================================== -->
+
+        <div class="presente">
+
+            <img
+                src="imagens/toalhas.jpg"
+                alt="Toalhas">
+
+            <div class="conteudo">
+
+                <h3>🛁 Jogo de toalhas</h3>
+
+                <p>
+                    Para deixar o banheiro
+                    completo para o casal.
+                </p>
+
+                <div class="preco">
+                    
+                </div>
+
+
+                <!-- ALTERE O LINK -->
+
+                <a
+                    href="COLOQUE_AQUI_O_LINK_DAS_TOALHAS"
+                    target="_blank"
+                    class="botao">
+
+                    🎁 Presentear
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     RODAPÉ
+========================================== -->
+
+<footer>
+
+    <p>💍 William & Marcela 💍</p>
+
+    <p>
+        Obrigado por fazer parte da nossa história! ❤️
+    </p>
+
+    <p>
+        Nosso casamento: 22 de maio de 2027
+    </p>
+
+</footer>
+
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+
+/* ==========================================
+   DATA DO CASAMENTO
+========================================== */
+
+const dataCasamento =
+    new Date("May 22, 2027 00:00:00").getTime();
+
+
+/* ==========================================
+   CONTADOR
+========================================== */
+
+function atualizarContador() {
+
+    const agora =
+        new Date().getTime();
+
+    const distancia =
+        dataCasamento - agora;
+
+
+    /* SE CHEGAR O DIA DO CASAMENTO */
+
+    if (distancia <= 0) {
+
+        document.getElementById("contador").innerHTML =
+            "<h2>💍 Chegou o grande dia! ❤️</h2>";
+
+        return;
+    }
+
+
+    /* CALCULAR DIAS */
+
+    const dias =
+        Math.floor(
+            distancia /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    /* CALCULAR HORAS */
+
+    const horas =
+        Math.floor(
+            (distancia %
+            (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
+
+
+    /* CALCULAR MINUTOS */
+
+    const minutos =
+        Math.floor(
+            (distancia %
+            (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+
+
+    /* CALCULAR SEGUNDOS */
+
+    const segundos =
+        Math.floor(
+            (distancia %
+            (1000 * 60)) /
+            1000
+        );
+
+
+    document.getElementById("dias").innerText =
+        dias;
+
+    document.getElementById("horas").innerText =
+        horas.toString().padStart(2, "0");
+
+    document.getElementById("minutos").innerText =
+        minutos.toString().padStart(2, "0");
+
+    document.getElementById("segundos").innerText =
+        segundos.toString().padStart(2, "0");
+
+}
+
+
+/* ATUALIZAR A CADA SEGUNDO */
+
+setInterval(atualizarContador, 1000);
+
+atualizarContador();
+
+
+</script>
+
+
+</body>
+
+</html>
+```
+
+
+
